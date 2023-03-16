@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Personal Portfolio Website With Typing Effect</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="logo">folio<b>.</b></div>
+                <ul class="navItems">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+                <div class="links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </nav>
+
+        <div class="wrapper">
+            <div class="cols cols0">
+                <span class="top">Hello</span>
+                <h1>I'm <span class="multiText"></span></h1>
+                <p>I am Student of SKCT</p>
+                <div class="bt">
+                    <button>Download Resume</button>
+                </div>
+            </div>
+            <div class="cols cols1">
+                <div class="imgbox">
+                    <img src="splash.png" id="splash">
+                    <img src="img.png">
+                </div>
+            </div>
+        </div>
+        <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+        <script>
+            var typingEffect = new Typed(".multiText",{
+                strings :["a coder","a youtuber","an editor"],
+                loop:true,
+                typeSpeed:100,
+                backSpeed:80,
+                backDelay:1500
+            })
+        </script>
+    </body>
+</html>
