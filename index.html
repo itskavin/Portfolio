@@ -2,52 +2,44 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' >
         <link rel="stylesheet" href="style.css">
-        <title>Personal Portfolio Website With Typing Effect</title>
+        <title>Portfolio</title>
     </head>
-    <body>
-        <div class="container">
-            <nav>
-                <div class="logo">folio<b>.</b></div>
-                <ul class="navItems">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-                <div class="links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </nav>
 
-        <div class="wrapper">
-            <div class="cols cols0">
-                <span class="top">Hello</span>
-                <h1>I'm <span class="multiText"></span></h1>
-                <p>Just A Guy Who's Coding for Fun</p>
-                <div class="bt">
-                    <button>Download Resume</button>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">Portfolio.</a>
+            <nav class="navbar">
+                <a href="#" style="--i:1;"class ="active">About</a>
+            </nav>
+        </header>
+
+        <section class="home">
+            <div class="home-content">
+                <h3>Hi,It's Me</h3>
+                <h1>Kavin Thangavel</h1>
+                <h3>And I'm  <span class="multiple-text"></span></h3>
+                <p>Just a guy who's coding for fun ,
+                    From SKCT
+                </p>
+                <div class="social-media">
+                    <a href="#" style="--i:7"><i class="bx bxl-linkedin"></i></a>
+                    <a href="#" style="--i:8"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" style="--i:9"><i class="bx bxl-twitter"></i></a>
+                </div>
+                <a href="#" class="btn">Download Resume</a>
+            </div>
+            <div class="home-img">
+                        <img src="img.png">
+                    </div>
                 </div>
             </div>
-            <div class="cols cols1">
-                <div class="imgbox">
-                    <img src="splash.png" id="splash">
-                    <img src="img.png">
-                </div>
-            </div>
-        </div>
+        </section>
+
         <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
-        <script>
-            var typingEffect = new Typed(".multiText",{
-                strings :["a coder","a youtuber","an editor"],
-                loop:true,
-                typeSpeed:100,
-                backSpeed:80,
-                backDelay:1500
-            })
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
