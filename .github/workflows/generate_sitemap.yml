@@ -23,7 +23,7 @@ jobs:
         id: sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url: 'https://kavinthangavel.com'
+          base-url-path: 'https://kavinthangavel.com'
 
       - name: Output stats
         run: |
