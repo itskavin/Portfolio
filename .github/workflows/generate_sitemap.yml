@@ -3,8 +3,11 @@ name: Generate Sitemap
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main  
+  workflow_dispatch: 
+
+permissions:
+  contents: write  # Grants write permission to the contents
 
 jobs:
   build:
@@ -14,12 +17,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 
 
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url: 'https://kavinthangavel.com'
+          base-url: 'https://kavinthangavel.com' 
 
       - name: Output stats
         run: |
