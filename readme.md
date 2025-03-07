@@ -1,3 +1,2 @@
-This an Portfolio Website of Me
-
+This an Portfolio Website
 created using HTML and CSS 
