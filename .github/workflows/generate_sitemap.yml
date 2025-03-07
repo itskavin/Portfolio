@@ -1,45 +1,43 @@
-name: Generate Sitemap
+name: Auto Create Pull Request
 
 on:
   push:
-    branches:
-      - main  
-  workflow_dispatch: 
+    branches: [main]
+    paths: ['**/*.html', '**/*.pdf']
+  workflow_dispatch:
 
 permissions:
-  contents: write  # Grants write permission to the contents
+  contents: write
+  pull-requests: write
 
 jobs:
-  build:
+  create_pr:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
-
-      - name: Generate sitemap
+          fetch-depth: 0
+          
+      - name: Generate the sitemap
+        id: sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url: 'https://kavinthangavel.com' 
+          base-url: 'https://kavinthangavel.com'
 
       - name: Output stats
         run: |
           echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
           echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
           echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
-
-      - name: Commit and push sitemap
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          if [ -n "$(git status --porcelain)" ]; then
-            git add sitemap.xml
-            git commit -m 'Update sitemap.xml'
-            git push
-          else
-            echo "No changes to commit."
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'Automated update of files'
+          title: 'Automated File Updates'
+          body: |
+            This pull request contains automated updates to the repository files.
+          branch: 'auto-update-branch'
+          delete-branch: true
