@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate sitemap.xml
         run: |
-          python generate_sitemap.py
+          python .github/workflows/generate_sitemap.py
 
       - name: Commit and push sitemap
         run: |
